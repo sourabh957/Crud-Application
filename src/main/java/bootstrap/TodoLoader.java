@@ -28,7 +28,6 @@ public class TodoLoader implements CommandLineRunner {
                             .description("Buy eggs from market")
                             .TodoStatus(TodoStatus.NOT_COMPLETED)
                             .build() ; 
-                    new Todo("Go to market", "Buy eggs from market", TodoStatus.NOT_COMPLETED)
             );
             
             TodoRepository.save(
