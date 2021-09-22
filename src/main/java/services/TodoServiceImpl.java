@@ -39,7 +39,10 @@ public class TodoServiceImpl implements TodoService {
         todoFromDb.setTodoStatus(todo.getTodoStatus());
         todoFromDb.setDescription(todo.getDescription());
         todoFromDb.setTitle(todo.getTitle());
-        todoRepository.save(todoFromDb);
+        if(todoFromDb != null) {
+        	todo.setId(id);
+        }
+        todoRepository.save(todo);
     }
 
     @Override

@@ -23,19 +23,11 @@ public class TodoLoader implements CommandLineRunner {
     private void loadTodos() {
         if (TodoRepository.count() == 0) {
             TodoRepository.save(
-                    Todo.builder()
-                            .title("Go to market")
-                            .description("Buy eggs from market")
-                            .TodoStatus(TodoStatus.NOT_COMPLETED)
-                            .build() ; 
+                    new Todo("test","test", TodoStatus.COMPLETED)
             );
             
             TodoRepository.save(
-                    Todo.builder()
-                            .title("Go to school")
-                            .description("Complete assignments")
-                            .TodoStatus(TodoStatus.NOT_COMPLETED)
-                            .build()
+            		new Todo("test1","test1", TodoStatus.COMPLETED)
             );
             System.out.println("Sample Todos Loaded");
         }
